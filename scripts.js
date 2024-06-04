@@ -4,13 +4,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const body = document.body;
     const splash = document.getElementById('splash-screen');
     const mainContent = document.getElementById('main-content');
+    const toastLiveExample = document.getElementById('liveToast')
 
     setTimeout(() => {
         html.style.height = 'inherit';
         body.style.height = 'inherit';
         splash.style.display = 'none';
         mainContent.style.display = 'block';
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
         mainContent.classList.remove('hidden');
+        toastBootstrap.show()
     }, 2000); // 5 seconds delay
 
     // Animation on scroll
